@@ -1,0 +1,161 @@
+#import main
+
+def credits():
+    
+    # Pygame configuration and functions that load images to return or close the project.
+    back_img = pygame.image.load('Menu/back_button.png')
+    back_img.convert_alpha()
+    back_menu = back_img.get_rect()
+    back_menu.center = 1280//12, 720//14
+    close_img = pygame.image.load('Menu/close_button.png')
+    close_img.convert_alpha()
+    close_menu = close_img.get_rect()
+    close_menu.center = 1280//1.1, 720//14
+
+    # Configure and rendering credit screen.
+    credit_screen = pygame.display.set_mode((1280, 720))
+    credit_img = 'Menu/credit_screen.png'
+    credit_background = pygame.image.load(credit_img).convert()
+    credit_screen.blit(credit_background, (0, 0))
+
+    # Rendering Back button and Close button in Screens.
+    credit_screen.blit(back_img, back_menu)
+    pygame.draw.rect(credit_screen,(0,0,0), back_menu, 1)
+    credit_screen.blit(close_img, close_menu)
+    pygame.draw.rect(credit_screen,(0,0,0), close_menu, 1)
+    pygame.display.update()
+
+    # main.sair(main.back_menu1, main.close_menu1)
+    #Menu.exit_genetic.exit_genetic_cars(back_menu, close_menu)
+    # Close Genetic cars from credits screen.
+    while True:
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                pygame.quit()
+                sys.exit()
+
+            if event.type == pygame.MOUSEBUTTONDOWN:
+                mouse_pos = event.pos
+
+                if back_menu.collidepoint(mouse_pos):
+                    #main.menu.mainloop(main.surface)
+                    main.main_menu()
+
+                elif close_menu.collidepoint(mouse_pos):
+                        print('Genetic Cars Demonstration Was Closed')
+                        pygame.quit()
+                        sys.exit()
+def instructions():
+
+    # Pygame configuration and functions that load images to return or close the project.
+    back_img = pygame.image.load('Menu/back_button.png')
+    back_img.convert_alpha()
+    back_menu = back_img.get_rect()
+    
+    back_menu.center = 1280//12, 720//14
+    close_img = pygame.image.load('Menu/close_button.png')
+    close_img.convert_alpha()
+    close_menu = close_img.get_rect()
+    close_menu.center = 1280//1.1, 720//14
+
+    # Configure and rendering instructions screen.
+    # Configure and rendering credit screen.
+    instruction_screen = pygame.display.set_mode((1280, 720))
+    instruction_img = 'Menu/instructions_screen.png'
+    instruction_background = pygame.image.load(instruction_img).convert()
+    instruction_screen.blit(instruction_background, (0, 0))
+
+    # Rendering Back button and Close button in Screens.
+    instruction_screen.blit(back_img, back_menu)
+    pygame.draw.rect(instruction_screen,(0,0,0), back_menu, 1)
+    instruction_screen.blit(close_img, close_menu)
+    pygame.draw.rect(instruction_screen,(0,0,0), close_menu, 1)
+    pygame.display.update()
+    
+
+    # Menu.exit_genetic.exit_genetic_cars(back_menu, close_menu)
+    # Close Genetic Cars from instructions screen.
+    while True:
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                pygame.quit()
+                sys.exit()
+
+            if event.type == pygame.MOUSEBUTTONDOWN:
+                mouse_pos = event.pos
+
+                if back_menu.collidepoint(mouse_pos):
+                    #main.menu.mainloop(main.surface)
+                    main.main_menu()
+                elif close_menu.collidepoint(mouse_pos):
+                        print('Genetic Cars Demonstration Was Closed')
+                        pygame.quit()
+                        sys.exit()
+
+def results():
+
+    count = 0
+    color = (0,0,0)
+
+    # Pygame configuration and functions that load images to return or close the project.
+    back_img = pygame.image.load('Menu/back_button.png')
+    back_img.convert_alpha()
+    back_menu = back_img.get_rect()
+    back_menu.center = 1280//12, 720//14
+    close_img = pygame.image.load('Menu/close_button.png')
+    close_img.convert_alpha()
+    close_menu = close_img.get_rect()
+    close_menu.center = 1280//1.1, 720//14
+
+    # Configure and rendering results screen.
+    results_screen = pygame.display.set_mode((1280, 720))
+    results_img = 'Menu/resultados_720p.png'
+    results_background = pygame.image.load(results_img).convert_alpha()
+    results_screen.blit(results_background, (0, 0))
+    pygame.time.delay(20)
+    pygame.display.update()
+
+    # Rendering Back button and Close button in Screens.
+    results_screen.blit(back_img, back_menu)
+    pygame.draw.rect(results_screen,(0,0,0), back_menu, 1)
+    results_screen.blit(close_img, close_menu)
+    pygame.draw.rect(results_screen,(0,0,0), close_menu, 1)
+
+    # Print the results of the execution of genetic algorithms through Pygame Results Screen.
+    with open("results/output.txt", 'r') as results:
+
+            for line in results:
+                line = line.strip()
+                count += 2
+                results_screen.blit((pygame.font.SysFont('Arial',18, True, True).render(line, True, color)),(300,8*count+180))
+            count = 0
+
+    pygame.display.update()
+
+    # Menu.exit_genetic.exit_genetic_cars(back_menu, close_menu)
+    # Close Genetic Cars from results screen.
+    while True:
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                pygame.quit()
+                sys.exit()
+
+            if event.type == pygame.MOUSEBUTTONDOWN:
+                mouse_pos = event.pos
+
+                if back_menu.collidepoint(mouse_pos):
+                    #main.menu.mainloop(main.surface)
+                    main.main_menu()
+
+                elif close_menu.collidepoint(mouse_pos):
+                        print('Genetic Cars Demonstration Was Closed')
+                        pygame.quit()
+                        sys.exit()
+                        
+#from main import main_menu
+#from transition import main_menu_return
+
+#import main
+import pygame
+import sys
+import main
