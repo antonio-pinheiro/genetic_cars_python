@@ -36,30 +36,17 @@ pip install matplotlib<br>
 pip install numpy<br>
 pip install pygame-menu<br>
 
-<h5>RESOLUÇÕES DE TELA</h5>
-
-A demonstração do jogo contém duas opções de resolução, genetic_cars_720p.py para monitores com a resolução de 1280x720<br> ou<br> genetic_cars_1080p.py para monitores com resolução de 1920x1080.
-
-
-<h5>OUTROS MÉTODOS DE EXECUÇÃO</h5>
-<h5>EXECUÇÃO EM LINUX</h5>
-
-Para rodar a demonstração do jogo em sistemas operacionais Linux, 
-abra o terminal e navegue até o diretório onde o jogo se encontra e digite o seguinte comando:
-
-python genetic_cars_720p.py (tecle Enter)
-<br>ou<br>
-python genetic_cars_1080p.py (tecle Enter)<br>
-
-<h5>EXECUÇÃO EM WINDOWS</h5>
+<h5>EXECUÇÃO EM WINDOWS e LINUX</h5>
 
 Para rodar a demonstração do jogo em sistemas operacionais Windows,
 abra o terminal PowerShell e navegue até o diretório onde o jogo se encontra e digite o seguinte comando:
 
-python genetic_cars_720p.py (tecle Enter)
-<br>ou<br>
-python genetic_cars_1080p.py (tecle Enter)
+python3 main.py (tecle Enter)
 
+Para rodar a demonstração do jogo em sistemas operacionais Linux,
+abra o terminal Bash e navegue até o diretório onde o jogo se encontra e digite o seguinte comando:
+
+python3 main.py (tecle Enter)
 
 <h5>IMAGENS DO PROJETO</h5>
 
